@@ -18,13 +18,15 @@ void EchoKeyboard::init() {
   checkEnabled();
 }
 
-void EchoKeyboard::press(char code) {
+void EchoKeyboard::press(byte code) {
 #if defined(DEBUG)
   Serial.print("Press: ");
-  Serial.print(code);
+  Serial.print((char)code);
   Serial.print(" (");
-  Serial.print((byte)code);
-  Serial.print(") - ");
+  Serial.print(code);
+  Serial.print(") - 0x");
+  Serial.print(code, 16);
+  Serial.print(" - b");
   Serial.println(code, 2);
 #elif defined(USB_KEYBOARD)
   if (_enabled) Keyboard.press(code);
@@ -33,13 +35,15 @@ void EchoKeyboard::press(char code) {
 #endif
 }
 
-void EchoKeyboard::release(char code) {
+void EchoKeyboard::release(byte code) {
 #if defined(DEBUG)
   Serial.print("Release: ");
-  Serial.print(code);
+  Serial.print((char)code);
   Serial.print(" (");
-  Serial.print((byte)code);
-  Serial.print(") - ");
+  Serial.print(code);
+  Serial.print(") - 0x");
+  Serial.print(code, 16);
+  Serial.print(" - b");
   Serial.println(code, 2);
 #elif defined(USB_KEYBOARD)
   if (_enabled) Keyboard.release(code);

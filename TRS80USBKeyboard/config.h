@@ -4,31 +4,35 @@
 // When active, uses Serial communication instead of sending data over USB
 //#define DEBUG
 
-// When active, uses USB communication for echoing keyboard input instead 
+// When active, uses USB communication for echoing keyboard input instead
 // of Serial. When sent over serial, only the keypresses will be echo'd.
 #define USB_KEYBOARD
 
 // Activate one of the following lines to target the right keyboard
 // Make sure to only activate one of these.
 #define Model1
-//#define Model3
+// #define Model3
 //#define Model4
 
 // Activate one of the following boards to target the right platform
 // Make sure to only activate one of these.
-//#define Adafruit_ItsyBitsy_5V
+// #define Adafruit_ItsyBitsy_5V
 #define Sparkfun_ProMicro_ATMEGA32u4_5V
-//#define Arduino_Leonardo
-//#define Arduino_Zero
-//#define Arduino_UnoR4
-//#define Arduino_Due
-//#define Arduino_Micro
+// #define Arduino_Leonardo
+// #define Arduino_Zero
+// #define Arduino_UnoR4
+// #define Arduino_Due
+// #define Arduino_Micro
 
 // If none of the both work for you, use the one below and edit the config.
-//#define Arduino_Custom
+// #define Arduino_Custom
 
 // Defines the baut rate of the serial communication when debugging
 #define SERIAL_BAUD_RATE 9600
+
+// Defines the delay in milliseconds between keypress sends when a key 
+// stays pressed. Set to 0 to deactivate.
+#define REPEAT_DELAY_MS 0 // 250 (common)
 
 #endif /* CONFIG_H */
 

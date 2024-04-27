@@ -7,11 +7,15 @@
 // row pins were set.
 #define DELAY_READ 1
 
-// Defines if the row values need to be inverted.
-#define INVERTED_ROWS true
-
-// Defines if the column values need to be inverted.
-#define INVERTED_COLS true
+// Defines if there are active components on the keyboard.
+//
+// When active:   will send HIGH/LOW to the rows, and reads the 
+//                columns as is.
+// When inactive: will send only LOW to rows and float when suppose
+//                to be high to emulate an open-collect buffer, and
+//                reads the columns as inverse since column input
+//                will be pull-up.
+//#define ACTIVE_KEYBOARD
 
 // Definition of special keys
 #define KEY_ENTER 0xB0
@@ -28,6 +32,13 @@
 #define KEY_F1 0xC2
 #define KEY_F2 0xC3
 #define KEY_F3 0xC4
+
+// Defines where to find shift keys
+#define SHIFT1_ROW 7
+#define SHIFT1_VALUE 1
+
+#define SHIFT2_ROW 7
+#define SHIFT2_VALUE 2
 
 // Unshifted keymap from row 1 to 8 (top to bottom) and
 // columns 1 to 8 (left to right)

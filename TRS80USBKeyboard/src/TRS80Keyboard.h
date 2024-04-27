@@ -9,13 +9,16 @@ private:
   void _writeRows(byte address);
   byte _readCols();
 
+  void _setup();
+
 public:
   void init();
 
   int anyKeyPressed();
   void readKeys(ByteArray* data);
 
-  void reset();
+  void setLED();
+  void resetLED();
 };
 
 #endif /* TRS80_KEYBOARD_H */

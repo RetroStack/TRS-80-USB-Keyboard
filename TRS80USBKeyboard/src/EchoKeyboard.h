@@ -10,8 +10,8 @@ private:
 public:
   void init();
 
-  void press(char code);
-  void release(char code);
+  void press(byte code);
+  void release(byte code);
 
   void releaseAll();
 
