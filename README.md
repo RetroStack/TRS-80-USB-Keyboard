@@ -8,8 +8,8 @@ TRS-80 keyboards typically expose the keyboard matrix directly at the connector,
 
 The following TRS-80 models are currently supported:
 - Model 1
-- Model 3 (Untested)
-- MOdel 4 (Untested)
+- Model 3 (Confirmed with Model 4 - same pinout)
+- MOdel 4
 
 Several Arduino development boards can be used for this project, but the code was specifically confirmed on the following boards (prices as of April 2024):
 - [Adafruit ItsyBitsy (5V)](https://www.adafruit.com/product/3677) - $10
@@ -88,6 +88,10 @@ When deactivated, it uses the serial interface to send keypresses only. This may
 ### `SERIAL_BAUD_RATE`
 
 This option is followed by a value representing the number of signal changes per second. `9600` is a common default, as it is sufficiently fast for a keyboard and supported by many boards. If unsure, leave this option as is.
+
+### `REPEAT_DELAY_MS`
+
+This option emulates the AT repeat rate in milliseconds for TRS-80 keyboards. By default this is set to 0 to deactivate. A reasonable value is 250 ms.
 
 ### Models
 
