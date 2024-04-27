@@ -9,7 +9,7 @@ TRS-80 keyboards typically expose the keyboard matrix directly at the connector,
 The following TRS-80 models are currently supported:
 - Model 1
 - Model 3 (Confirmed with Model 4 - same pinout)
-- MOdel 4
+- Model 4
 
 Several Arduino development boards can be used for this project, but the code was specifically confirmed on the following boards (prices as of April 2024):
 - [Adafruit ItsyBitsy (5V)](https://www.adafruit.com/product/3677) - $10
