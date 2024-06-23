@@ -2,6 +2,8 @@
 
 This project enables the connection of an original TRS-80 keyboard to a modern computer via USB. It supports multiple TRS-80 models and various development boards for interfacing the keyboard with a system over USB. The entire project is available under the MIT license.
 
+NOTE: I was made aware of a great project which does this for multiple systems. Check out the following repo as well: https://github.com/ITDiscovery/AVR128PS2Keyboard
+
 ## Project Details
 
 TRS-80 keyboards typically expose the keyboard matrix directly at the connector, revealing the rows and columns of this matrix and allowing the CPU to handle all decoding. This capability enables us to connect these keyboards directly to Arduino I/O ports and utilize the onboard USB controller to function as a human interface device (HID).
