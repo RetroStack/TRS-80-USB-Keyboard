@@ -2,7 +2,7 @@
 
 This project enables the connection of an original TRS-80 keyboard to a modern computer via USB. It supports multiple TRS-80 models and various development boards for interfacing the keyboard with a system over USB. The entire project is available under the MIT license.
 
-NOTE: I was made aware of a great project which does this for multiple systems. Check out the following repo as well: https://github.com/ITDiscovery/AVR128PS2Keyboard
+NOTE: I was made aware of a great project which does the reverse of this for multiple systems. Check out the following repo if you need that: https://github.com/ITDiscovery/AVR128PS2Keyboard
 
 ## Project Details
 
