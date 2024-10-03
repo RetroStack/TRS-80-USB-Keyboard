@@ -9,11 +9,13 @@ NOTE: I was made aware of a great project which does the reverse of this for mul
 TRS-80 keyboards typically expose the keyboard matrix directly at the connector, revealing the rows and columns of this matrix and allowing the CPU to handle all decoding. This capability enables us to connect these keyboards directly to Arduino I/O ports and utilize the onboard USB controller to function as a human interface device (HID).
 
 The following TRS-80 models are currently supported:
+
 - Model 1
 - Model 3 (Confirmed with Model 4 - same pinout)
 - Model 4
 
 Several Arduino development boards can be used for this project, but the code was specifically confirmed on the following boards (prices as of April 2024):
+
 - [Adafruit ItsyBitsy (5V)](https://www.adafruit.com/product/3677) - $10
 - [Arduino Due](https://store-usa.arduino.cc/collections/boards-modules/products/arduino-due) - $50
 - [Arduino Leonardo](https://store-usa.arduino.cc/products/arduino-leonardo-with-headers) - $25
@@ -35,7 +37,6 @@ Each model has a specific pinout. Connect a wire to each of the pins listed belo
 
 ![Model Pinout](/Images/Model_Pinout.png)
 
-
 NOTE: Some schematics define ROWS and COLUMNS oppositely. Because a matrix can be seen from either perspective (transposed), I've used the same matrix structure for consistency with Model 1. Refer to this pinout to avoid receiving garbage and erratic keyboard behavior.
 
 The pins marked as "X" are unconnected. You don't need to attach a wire there.
@@ -52,6 +53,8 @@ Now, with one side of all the wires connected, let's examine the board.
 To connect a specific development board, select one board in the [`config.h`](/TRS80USBKeyboard/config.h) file in the root of the code directory "[TRS80USBKeyboard](/TRS80USBKeyboard)". For more details, refer to the "Configuration" -> "Boards & Custom Board" section below.
 
 Each board has its own pinout. Use the code as a reference by opening the selected board from the [`boards`](/TRS80USBKeyboard/src/boards/) directory.
+
+There is an adapter board for the Pro Micro that will help with connecting the pins. See "Adapter Board" below.
 
 Within each file, there are definitions for the row and column pins. An example would look as follows:
 
@@ -140,6 +143,22 @@ This is an optional pin that might be used by some specific keyboard models. How
 ### `R#_PIN` and `C#_PIN`
 
 These definitions select the individual pins for each keyboard signal.
+
+## Adapter Board
+
+For your convenience, an adapter board has been added to this repository, as creating a ribbon cable for all the pins can be quite cumbersome. You can find it in the [Adapters](/Adapters) folder.
+
+Below is a photo of a fully assembled adapter board with a Pro Micro pre-installed:
+
+![Pro Micro Adapter](/Adapters/TRS80_USB_Keyboard_ProMicro_Adapter/Images/Assembled.png)
+
+This adapter board allows the TRS-80 Model 1, 3, and 4 to connect to the Pro Micro and the device to act as a USB Host.
+
+A convenient RESET button is included for resetting the Pro Micro, especially useful if you’ve accidentally uploaded a 3.3V version.
+
+Gerber files are available in the [Latest](/Latest) folder:
+
+- Files compatible with popular online PCB manufacturers like [PCBWay](/Latest/TRS80_USB_Keyboard_ProMicro_Adapter_Gerber_PCBWay.zip) and [JLCPCB](/Latest/TRS80_USB_Keyboard_ProMicro_Adapter_Gerber_JLCPCB.zip). Most manufacturers should accept either version.
 
 ## Additional Resources
 
